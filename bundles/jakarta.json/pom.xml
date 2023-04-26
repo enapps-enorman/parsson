@@ -159,6 +159,13 @@
                                     org.glassfish.hk2.osgiresourcelocator;resolution:=optional,
                                     *
                                 </Import-Package>
+                                <Require-Capability>
+                                    osgi.extender;
+                                          filter:="(osgi.extender=osgi.serviceloader.processor)",
+                                        osgi.serviceloader;
+                                          filter:="(osgi.serviceloader=jakarta.json.spi.JsonProvider)";
+                                          cardinality:=multiple
+                                </Require-Capability>
                             </instructions>
                         </configuration>
                     </execution>
